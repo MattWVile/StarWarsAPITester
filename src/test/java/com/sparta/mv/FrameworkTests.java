@@ -29,6 +29,12 @@ public class FrameworkTests {
     }
 
     @Test
+    @DisplayName("test header content type is correct")
+    void testHeaderContentTypeIsCorrect() {
+        Assertions.assertEquals("application/json",getContentType());
+    }
+
+    @Test
     @DisplayName("Is vehicles a valid http")
     void isVehiclesAValidHttp() {
         Assertions.assertTrue(response.isVehiclesValidUrl());

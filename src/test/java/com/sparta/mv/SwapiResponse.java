@@ -4,7 +4,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SwapiResponse{
-	private String regex = "[a-zA-Z]+://[a-zA-Z]+\\.[a-zA-Z]+/[a-zA-Z]+/[a-zA-Z]+/[0-9]+/";
+	private String regex = "https://swapi\\.dev/api/[a-zA-Z]+/[0-9]+/";
 
 	@JsonProperty("films")
 	private List<String> films;
@@ -134,7 +134,7 @@ public class SwapiResponse{
 	public boolean isVehiclesValidUrl(){
 		int size = getVehicles().size();
 		int i = 0;
-		int count = 1;
+		int count = 0;
 		while(i<size) {
 			if (getVehicles().get(i).matches(regex)) {
 				count ++;
@@ -146,7 +146,7 @@ public class SwapiResponse{
 	}
 	public boolean isSpeciesValidUrl(){
 		int size = getSpecies().size();
-		int count = 1;
+		int count = 0;
 		int i = 0;
 		while(i<size) {
 			if (getSpecies().get(i).toString().matches(regex)) {
@@ -159,10 +159,10 @@ public class SwapiResponse{
 
 	public boolean isStarshipsValidUrl(){
 		int size = getStarships().size();
-		int count = 1;
+		int count = 0;
 		int i = 0;
 		while(i<size) {
-			if (getStarships().get(i).startsWith("https://swapi.dev/api/starships/")) {
+			if (getStarships().get(i).matches(regex)) {
 				count ++;
 			}
 			i++;

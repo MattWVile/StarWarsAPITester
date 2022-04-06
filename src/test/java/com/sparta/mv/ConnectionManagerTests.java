@@ -58,5 +58,5 @@ public class ConnectionManagerTests {
     void testGetBodyIsNotNull() {
         Assertions.assertNotNull(getBody());
     }
-    
+
 }

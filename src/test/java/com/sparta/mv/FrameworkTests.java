@@ -55,4 +55,76 @@ public class FrameworkTests {
         Assertions.assertTrue(response.isSpeciesValidUrl());
     }
 
+    @Test
+    @DisplayName("If Films Exist")
+    void ifFilmsExist() {
+        Assertions.assertTrue(response.hasFilms());
+    }
+
+    @Test
+    @DisplayName("If HomeWorld Exist")
+    void ifHomeWorldExists() {
+        Assertions.assertTrue(response.hasHomeWorld());
+    }
+
+    @Test
+    @DisplayName("If Starships Exist")
+    void ifStarshipsExist() {
+        Assertions.assertTrue(response.hasStarships());
+    }
+
+    @Test
+    @DisplayName("If Vehicles Exist")
+    void ifVehiclesExist() {
+        Assertions.assertTrue(response.hasVehicles());
+    }
+
+    @Test
+    @DisplayName("If Species Exists")
+    void ifSpeciesExists() {
+        Assertions.assertTrue(response.hasSpecies());
+    }
+
+    @Test
+    @DisplayName("If Gender Exists")
+    void ifGenderExists() {
+        Assertions.assertTrue(response.hasGender());
+    }
+
+    @Test
+    @DisplayName("test name is a string")
+    void testNameIsAString() {
+        Assertions.assertTrue(response.isNameString());
+    }
+
+    @Test
+    @DisplayName("test hair color is a string")
+    void testHairColorIsAString() {
+        Assertions.assertTrue(response.isHairColorString());
+    }
+
+    @Test
+    @DisplayName("test skin color is a string")
+    void testSkinColorIsAString() {
+        Assertions.assertTrue(response.isSkinColorString());
+    }
+
+    @Test
+    @DisplayName("test eye color is a string")
+    void testEyeColorIsAString() {
+        Assertions.assertTrue(response.isEyeColorString());
+    }
+
+    @Test
+    @DisplayName("test gender is a string")
+    void testGenderIsAString() {
+        Assertions.assertTrue(response.isGenderString());
+    }
+
+    @Test
+    @DisplayName("test homeworld is a valid url")
+    void testHomeworldIsAValidUrl() {
+        Assertions.assertTrue(response.isHomeworldURLValid());
+    }
+
 }

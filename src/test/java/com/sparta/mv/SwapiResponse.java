@@ -166,4 +166,92 @@ public class SwapiResponse{
 		}
 		return size == count && count != 0;
 	}
+
+	public boolean isNameString(){
+		return name.getClass() == String.class;
+	}
+
+	public boolean isHairColorString(){
+		return hairColor.getClass() == String.class;
+	}
+
+	public boolean isSkinColorString(){
+		return skinColor.getClass() == String.class;
+	}
+
+	public boolean isEyeColorString(){
+		return eyeColor.getClass() == String.class;
+	}
+
+	public boolean isGenderString(){
+		return gender.getClass() == String.class;
+	}
+
+	public boolean isHomeworldURLValid(){
+		return homeworld.matches("https:\\/\\/swapi.dev\\/api\\/planets\\/d+");
+	}
+
+	public boolean hasFilms(){
+		return films != null;
+	}
+
+	public boolean hasHomeWorld(){
+		return homeworld != null;
+	}
+
+	public boolean hasGender(){
+		return gender != null;
+	}
+
+	public boolean hasSkinColor(){
+		return skinColor != null;
+	}
+
+	public boolean hasEdited(){
+		return edited != null;
+	}
+
+	public boolean hasCreated(){
+		return created != null;
+	}
+
+	public boolean hasMass(){
+		return mass != null;
+	}
+
+	public boolean hasVehicles(){
+		return vehicles != null;
+	}
+
+	public boolean hasUrl(){
+		return url != null;
+	}
+
+	public boolean hasHairColor(){
+		return hairColor != null;
+	}
+
+	public boolean hasBirthYear(){
+		return birthYear != null;
+	}
+
+	public boolean hasEyeColor(){
+		return eyeColor != null;
+	}
+
+	public boolean hasSpecies(){
+		return species != null;
+	}
+
+	public boolean hasStarships(){
+		return starships != null;
+	}
+
+	public boolean hasName(){
+		return name != null;
+	}
+
+	public boolean hasHeight(){
+		return height != null;
+	}
 }

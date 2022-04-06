@@ -13,7 +13,7 @@ public class FrameworkTests {
 
     @BeforeEach
     void setup() {
-        response = Injector.injectDTO(getConnection(2));
+        response = Injector.injectDTO(getResponse(1));
     }
 
     @Test

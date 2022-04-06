@@ -8,28 +8,23 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ConnectionManager {
-    private static final String BASEURL = "https://swapi.dev/api/people/";
+    private static final String BASEURL = "https://swapi.dev/api/people/1";
     private static int endPoint;
 
 
-    public static String getConnection() {
-        getResponse();
-        return BASEURL;
-    }
-    public static String getConnection(int people) {
-        getResponse();
-        endPoint = people;
-        return BASEURL + people;
-    }
-
     public static int getStatusCode() {
-        return getResponse().statusCode();
+        return getResponse(endPoint).statusCode();
     }
 
-    private static HttpResponse<String> getResponse() {
+    static HttpResponse<String> getResponse(int people) {
+        endPoint = people;
         HttpClient httpClient = HttpClient.newHttpClient();
-        HttpRequest httpRequest = HttpRequest.newBuilder().uri(URI.create(BASEURL + endPoint)).build();
+        HttpRequest httpRequest = HttpRequest.newBuilder()
+                .uri(URI.create(BASEURL + people))
+                .build();
+
         HttpResponse<String> httpResponse = null;
+
         try {
             httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {

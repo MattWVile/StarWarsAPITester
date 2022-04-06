@@ -4,6 +4,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SwapiResponse{
+	private String regex = "[a-zA-Z]+://[a-zA-Z]+\\.[a-zA-Z]+/[a-zA-Z]+/[a-zA-Z]+/[0-9]+/";
 
 	@JsonProperty("films")
 	private List<String> films;
@@ -122,24 +123,25 @@ public class SwapiResponse{
 		int count = 0;
 		int i = 0;
 		while(i<size) {
-			if(getFilms().get(i).matches("https:\\/\\/swapi.dev\\/api\\/films\\/\\d+")){
+			if(getFilms().get(i).matches(regex)){
 				count ++;
 			}
 			i++;
 		}
-		return size == count && count != 0 ;
+		return size == count ;
 	}
+
 	public boolean isVehiclesValidUrl(){
 		int size = getVehicles().size();
 		int i = 0;
 		int count = 1;
 		while(i<size) {
-			if (getVehicles().get(i).matches("https:\\/\\/swapi.dev\\/api\\/vehicles\\/\\d+")) {
+			if (getVehicles().get(i).matches(regex)) {
 				count ++;
 			}
 			i++;
 		}
-		return size == count && count != 0;
+		return size == count;
 
 	}
 	public boolean isSpeciesValidUrl(){
@@ -147,24 +149,25 @@ public class SwapiResponse{
 		int count = 1;
 		int i = 0;
 		while(i<size) {
-			if (getSpecies().get(i).toString().matches("https:\\/\\/swapi.dev\\/api\\/species\\/\\d+")) {
+			if (getSpecies().get(i).toString().matches(regex)) {
 				count ++;
 			}
 			i++;
 		}
-		return size == count && count != 0;
+		return size == count;
 	}
+
 	public boolean isStarshipsValidUrl(){
 		int size = getStarships().size();
 		int count = 1;
 		int i = 0;
 		while(i<size) {
-			if (getStarships().get(i).matches("https:\\/\\/swapi.dev\\/api\\/starships\\/\\d+")) {
+			if (getStarships().get(i).startsWith("https://swapi.dev/api/starships/")) {
 				count ++;
 			}
 			i++;
 		}
-		return size == count && count != 0;
+		return size == count;
 	}
 
 	public boolean isNameString(){
@@ -188,7 +191,7 @@ public class SwapiResponse{
 	}
 
 	public boolean isHomeworldURLValid(){
-		return homeworld.matches("https:\\/\\/swapi.dev\\/api\\/planets\\/d+");
+		return homeworld.matches(regex);
 	}
 
 	public boolean hasFilms(){

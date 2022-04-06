@@ -27,12 +27,6 @@ public class App {
             e.printStackTrace();
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-        try{
-//            BoredResponse response = mapper.readValue(new URL("https://swapi.dev/api/"), BoredResponse.class);
-//            System.out.println(response.getActivity());
-        } catch (IOException e){
-            e.printStackTrace();
-        }
+
     }
 }

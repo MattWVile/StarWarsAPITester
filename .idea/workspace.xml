@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4c362b42-05ba-40a6-973f-bc7ae982a5c6" name="Changes" comment="">
+    <list default="true" id="aa812f3f-8f75-4cec-bf05-fd7d2312780d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/mv/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/mv/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sparta/mv/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sparta/mv/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/sparta/mv/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,46 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RunManager" selected="JUnit.FrameworkTests.testResponseIsNotNull">
+    <configuration name="FrameworkTests.testResponseIsNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StarWarsAPITester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.mv.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sparta.mv" />
+      <option name="MAIN_CLASS_NAME" value="com.sparta.mv.FrameworkTests" />
+      <option name="METHOD_NAME" value="testResponseIsNotNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FrameworkTests.testStatusIsOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StarWarsAPITester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.mv.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sparta.mv" />
+      <option name="MAIN_CLASS_NAME" value="com.sparta.mv.FrameworkTests" />
+      <option name="METHOD_NAME" value="testStatusIsOk" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.FrameworkTests.testResponseIsNotNull" />
+        <item itemvalue="JUnit.FrameworkTests.testStatusIsOk" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,5 +88,16 @@
       <updated>1649242369017</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

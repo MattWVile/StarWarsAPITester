@@ -34,6 +34,25 @@ public class FrameworkTests {
         Assertions.assertEquals("application/json",getContentType());
     }
 
-
+    @Test
+    @DisplayName("Is vehicles a valid http")
+    void isVehiclesAValidHttp() {
+        Assertions.assertTrue(response.isVehiclesValidUrl());
+    }
+    @Test
+    @DisplayName("Is films a valid http")
+    void isFilmsAValidHttp() {
+        Assertions.assertTrue(response.isFilmsValidUrl());
+    }
+    @Test
+    @DisplayName("Is starships a valid http")
+    void isStarshipsAValidHttp() {
+        Assertions.assertTrue(response.isStarshipsValidUrl());
+    }
+    @Test
+    @DisplayName("Is species a valid http")
+    void isSpeciesAValidHttp() {
+        Assertions.assertTrue(response.isSpeciesValidUrl());
+    }
 
 }

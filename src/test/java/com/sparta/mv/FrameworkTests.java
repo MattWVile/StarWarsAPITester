@@ -28,4 +28,12 @@ public class FrameworkTests {
         Assertions.assertNotNull(response);
     }
 
+    @Test
+    @DisplayName("test header content type is correct")
+    void testHeaderContentTypeIsCorrect() {
+        Assertions.assertEquals("application/json",getContentType());
+    }
+
+
+
 }

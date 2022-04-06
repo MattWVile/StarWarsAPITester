@@ -1,9 +1,7 @@
 package com.sparta.mv;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
-import java.net.URL;
 import java.net.http.HttpResponse;
 
 public class Injector {

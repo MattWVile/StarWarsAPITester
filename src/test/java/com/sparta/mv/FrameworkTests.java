@@ -13,7 +13,7 @@ public class FrameworkTests {
 
     @BeforeEach
     void setup() {
-        response = Injector.injectDTO(getResponse(1));
+        response = Injector.injectDTO(getConnection(1));
     }
 
     @Test
@@ -31,7 +31,7 @@ public class FrameworkTests {
     @Test
     @DisplayName("test header content type is correct")
     void testHeaderContentTypeIsCorrect() {
-        Assertions.assertEquals("application/json",getContentType());
+        Assertions.assertEquals("application/json",getHeader("Content-Type"));
     }
 
     @Test

@@ -8,30 +8,39 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ConnectionManager {
-    private static final String BASEURL = "https://swapi.dev/api/people/1";
+
+    private static final String BASEURL = "https://swapi.dev/api/people/";
     private static int endPoint;
+    private static HttpResponse response = null;
 
 
     public static int getStatusCode() {
-        return getResponse(endPoint).statusCode();
+        return response.statusCode();
+    }
+
+    public static String getContentType(){
+        return response.headers().allValues("Content-Type").get(0);
     }
 
     static HttpResponse<String> getResponse(int people) {
+        if (people > 83 || people <= 0) {
+            people = 1;
+            System.out.println("Testing for value 1. \n Please enter a value between 1-83");
+        }
         endPoint = people;
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .uri(URI.create(BASEURL + people))
                 .build();
-
-        HttpResponse<String> httpResponse = null;
-
         try {
-            httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
+            response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        return httpResponse;
+        return response;
     }
+
+
 
     public String getURL() {
         return BASEURL + endPoint;

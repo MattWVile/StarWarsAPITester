@@ -4,6 +4,7 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SwapiResponse{
+	private String regex = "https://swapi\\.dev/api/[a-zA-Z]+/[0-9]+/";
 
 	@JsonProperty("films")
 	private List<String> films;
@@ -115,5 +116,145 @@ public class SwapiResponse{
 
 	public String getHeight(){
 		return height;
+	}
+
+	public boolean isFilmsValidUrl(){
+		int size = getFilms().size();
+		int count = 0;
+		int i = 0;
+		while(i<size) {
+			if(getFilms().get(i).matches(regex)){
+				count ++;
+			}
+			i++;
+		}
+		return size == count ;
+	}
+
+	public boolean isVehiclesValidUrl(){
+		int size = getVehicles().size();
+		int i = 0;
+		int count = 0;
+		while(i<size) {
+			if (getVehicles().get(i).matches(regex)) {
+				count ++;
+			}
+			i++;
+		}
+		return size == count;
+
+	}
+	public boolean isSpeciesValidUrl(){
+		int size = getSpecies().size();
+		int count = 0;
+		int i = 0;
+		while(i<size) {
+			if (getSpecies().get(i).toString().matches(regex)) {
+				count ++;
+			}
+			i++;
+		}
+		return size == count;
+	}
+
+	public boolean isStarshipsValidUrl(){
+		int size = getStarships().size();
+		int count = 0;
+		int i = 0;
+		while(i<size) {
+			if (getStarships().get(i).matches(regex)) {
+				count ++;
+			}
+			i++;
+		}
+		return size == count;
+	}
+
+	public boolean isNameString(){
+		return name.getClass() == String.class;
+	}
+
+	public boolean isHairColorString(){
+		return hairColor.getClass() == String.class;
+	}
+
+	public boolean isSkinColorString(){
+		return skinColor.getClass() == String.class;
+	}
+
+	public boolean isEyeColorString(){
+		return eyeColor.getClass() == String.class;
+	}
+
+	public boolean isGenderString(){
+		return gender.getClass() == String.class;
+	}
+
+	public boolean isHomeworldURLValid(){
+		return homeworld.matches(regex);
+	}
+
+	public boolean hasFilms(){
+		return films != null;
+	}
+
+	public boolean hasHomeWorld(){
+		return homeworld != null;
+	}
+
+	public boolean hasGender(){
+		return gender != null;
+	}
+
+	public boolean hasSkinColor(){
+		return skinColor != null;
+	}
+
+	public boolean hasEdited(){
+		return edited != null;
+	}
+
+	public boolean hasCreated(){
+		return created != null;
+	}
+
+	public boolean hasMass(){
+		return mass != null;
+	}
+
+	public boolean hasVehicles(){
+		return vehicles != null;
+	}
+
+	public boolean hasUrl(){
+		return url != null;
+	}
+
+	public boolean hasHairColor(){
+		return hairColor != null;
+	}
+
+	public boolean hasBirthYear(){
+		return birthYear != null;
+	}
+
+	public boolean hasEyeColor(){
+		return eyeColor != null;
+	}
+
+	public boolean hasSpecies(){
+		return species != null;
+	}
+
+	public boolean hasStarships(){
+		return starships != null;
+	}
+
+	public boolean hasName(){
+		return name != null;
+	}
+
+	public boolean hasHeight(){
+		return height != null;
 	}
 }

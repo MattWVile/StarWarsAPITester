@@ -1,9 +1,6 @@
 package com.sparta.mv;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static com.sparta.mv.ConnectionManager.*;
 
@@ -13,7 +10,7 @@ public class FrameworkTests {
 
     @BeforeEach
     void setup() {
-        response = Injector.injectDTO(getResponse(1));
+        response = Injector.injectDTO(getResponse(84));
     }
 
     @Test

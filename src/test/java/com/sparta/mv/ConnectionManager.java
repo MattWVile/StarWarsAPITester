@@ -23,13 +23,15 @@ public class ConnectionManager {
     }
 
     static HttpResponse<String> getResponse(int people) {
+        if (people > 83 || people <= 0) {
+            people = 1;
+            System.out.println("Testing for value 1. \n Please enter a value between 1-83");
+        }
         endPoint = people;
         HttpClient httpClient = HttpClient.newHttpClient();
         HttpRequest httpRequest = HttpRequest.newBuilder()
                 .uri(URI.create(BASEURL + people))
                 .build();
-
-
         try {
             response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
@@ -37,6 +39,8 @@ public class ConnectionManager {
         }
         return response;
     }
+
+
 
     public String getURL() {
         return BASEURL + endPoint;
